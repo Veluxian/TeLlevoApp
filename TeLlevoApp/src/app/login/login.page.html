@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Login</ion-title>
+    <ion-title>TeLlevoApp</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,4 +10,41 @@
       <ion-title size="large">Login</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-grid [fixed]="true">
+    <ion-row>
+      <ion-col>
+        <ion-card-header>
+          <ion-card-title>Necesitas un viaje?</ion-card-title>
+          <ion-card-subtitle>Ingresa</ion-card-subtitle>
+        </ion-card-header>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-content>
+            <ion-list>
+              <ion-item>
+                <ion-label position="floating">Usuario</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Contraseña</ion-label>
+                <ion-input type="password"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-button expand="block">Ingresar</ion-button>
+              </ion-item>
+              <ion-button expand="block">Recuperar Contraseña</ion-button>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-footer>
+    <ion-toolbar>
+      EnroqueGroup
+    </ion-toolbar>
+  </ion-footer>
 </ion-content>
