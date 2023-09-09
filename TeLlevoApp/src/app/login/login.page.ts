@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
+import { Animation } from '@ionic/core';
+import { AnimationController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-login',
@@ -12,11 +15,27 @@ export class LoginPage implements OnInit {
     Contrasena:""
   }
 
-  constructor( private router:Router) { }
+  constructor( private router:Router, private animacionControl:AnimationController) { }
 
   ngOnInit() {
   }
 
+  ionViewDidEnter(){
+    this.animacionTitulo();
+  }
+
+  animacionTitulo(){
+    const titulo = document.querySelector('#titulo');
+    if(titulo){
+      const animaniac:Animation = this.animacionControl.create()
+      .addElement(titulo)
+      .duration(2500)
+      .iterations(Infinity)
+      .direction('alternate')
+      .fromTo('color', 'orange', 'var(--color)')
+    animaniac.play();
+    }
+  }
   homeRuta(){
     let navigationExtras:NavigationExtras = {
       state: {usuario:this.login.Usuario}
