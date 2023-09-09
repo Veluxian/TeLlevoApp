@@ -13,8 +13,12 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-  recuperarRuta(){
+  homeRuta(){
     this.router.navigate(['/home'])
+  }
+  
+  recuperarRuta(){
+    this.router.navigate(['/recuperacion'])
   }
 
 }
