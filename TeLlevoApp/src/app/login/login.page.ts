@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,6 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  login={
+    Usuario:"",
+    Contrasena:""
+  }
 
   constructor( private router:Router) { }
 
@@ -14,7 +18,11 @@ export class LoginPage implements OnInit {
   }
 
   homeRuta(){
-    this.router.navigate(['/home'])
+    let navigationExtras:NavigationExtras = {
+      state: {usuario:this.login.Usuario}
+    };
+    console.log(navigationExtras);
+    this.router.navigate(['/home'], navigationExtras);
   }
   
   recuperarRuta(){

@@ -26,11 +26,11 @@
             <ion-list>
               <ion-item>
                 <ion-label position="floating">Usuario</ion-label>
-                <ion-input type="text"></ion-input>
+                <ion-input type="text" [(ngModel)]="login.Usuario"></ion-input>
               </ion-item>
               <ion-item>
                 <ion-label position="floating">Contraseña</ion-label>
-                <ion-input type="password"></ion-input>
+                <ion-input type="password" [(ngModel)]="login.Contrasena"></ion-input>
               </ion-item>
               <ion-item>
                 <ion-button expand="block" (click)="homeRuta()">Ingresar</ion-button>
