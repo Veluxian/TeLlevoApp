@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { Animation } from '@ionic/core';
 import { AnimationController } from '@ionic/angular';
+import { GuardarUsuarioService } from '../servicios/guardar-usuario.service';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class LoginPage implements OnInit {
     Contrasena:""
   }
 
-  constructor( private router:Router, private animacionControl:AnimationController) { }
+  constructor( private router:Router, private animacionControl:AnimationController, private guardarUsuario:GuardarUsuarioService) { }
 
   ngOnInit() {
   }
@@ -41,6 +42,7 @@ export class LoginPage implements OnInit {
       state: {usuario:this.login.Usuario}
     };
     console.log(navigationExtras);
+    this.guardarUsuario.capturarUsuario(this.login.Usuario);
     this.router.navigate(['/home'], navigationExtras);
   }
   
