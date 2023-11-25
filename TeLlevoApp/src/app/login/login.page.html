@@ -23,7 +23,7 @@
       <ion-col>
         <ion-card>
           <ion-card-content>
-            <form [formGroup]="formulario">
+            <ion-list>
               <ion-item>
                 <ion-label position="floating">Usuario</ion-label>
                 <ion-input type="text" formControlName="Usuario"></ion-input>
@@ -38,7 +38,7 @@
               <ion-item>
                 <ion-button expand="block" (click)="recuperarRuta()">Recuperar Contraseña</ion-button>
               </ion-item>
-            </form>
+            </ion-list>
           </ion-card-content>
         </ion-card>
       </ion-col>
