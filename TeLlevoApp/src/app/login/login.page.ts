@@ -3,6 +3,7 @@ import { Router, NavigationExtras } from '@angular/router';
 import { Animation } from '@ionic/core';
 import { AnimationController } from '@ionic/angular';
 import { GuardarUsuarioService } from '../servicios/guardar-usuario.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -11,14 +12,18 @@ import { GuardarUsuarioService } from '../servicios/guardar-usuario.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  login={
-    Usuario:"",
-    Contrasena:""
+
+  formulario!: FormGroup;
+  login = { Usuario: '', Contrasena: '' 
   }
 
-  constructor( private router:Router, private animacionControl:AnimationController, private guardarUsuario:GuardarUsuarioService) { }
+  constructor( private router:Router, private animacionControl:AnimationController, private guardarUsuario:GuardarUsuarioService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.formulario = this.formBuilder.group({
+      Usuario: ['', Validators.required],
+      Contrasena: ['', Validators.required]
+    });
   }
 
   ionViewDidEnter(){

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,13 +11,12 @@ import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 export class HomePage {
   usuario:string="";
 
-  constructor(private activeroute:ActivatedRoute) 
+  constructor() 
   {
-    this.activeroute.paramMap.subscribe(params => {
-      if (window.history.state.usuario) {
-        this.usuario = window.history.state.usuario;
-      }
-    });
+    const state = window.history.state;
+    if (state && state.username) {
+      this.usuario = state.username;
+    }
   }
 
 }
