@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -11,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class HomePage {
   usuario:string="";
 
-  constructor() 
+  constructor(private router:Router) 
   {
     const state = window.history.state;
     if (state && state.usuario) {
@@ -19,4 +18,7 @@ export class HomePage {
     }
   }
 
+  almapa(){
+    this.router.navigate(['/mapa'])
+  }
 }
