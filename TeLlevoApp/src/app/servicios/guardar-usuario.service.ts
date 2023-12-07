@@ -12,7 +12,6 @@ export class GuardarUsuarioService {
   }
 
   obtenerUsuario(): string | null {
-    return localStorage.getItem('usuario');
-    
+    return localStorage.getItem('usuario'); 
   }
 }
