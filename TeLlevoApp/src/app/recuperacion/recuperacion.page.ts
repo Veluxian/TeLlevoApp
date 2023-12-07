@@ -44,6 +44,9 @@ export class RecuperacionPage implements OnInit {
   //     }
   //   );
   // }
+  envio(){
+    this.showSuccessPopup()
+  }
 
   async showSuccessPopup() {
     const alert = await this.alertController.create({

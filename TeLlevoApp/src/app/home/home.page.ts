@@ -14,8 +14,8 @@ export class HomePage {
   constructor() 
   {
     const state = window.history.state;
-    if (state && state.username) {
-      this.usuario = state.username;
+    if (state && state.usuario) {
+      this.usuario = state.usuario;
     }
   }
 
