@@ -26,6 +26,9 @@
         <ion-card>
           <ion-card-content>
             <ion-list>
+              <agm-map [latitude]="lat" [longitude]="lng">
+                <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+              </agm-map>
               <ion-item>
                 <ion-button>Actualizar</ion-button>
               </ion-item>
